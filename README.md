@@ -1,79 +1,132 @@
-# Todo CLI App
+# Todo CLI App 🚀
 
-A simple command-line todo application with in-memory storage built with Python.
+A stylish, cyberpunk-themed command-line Todo application with in-memory storage, built with Python and **Rich** for a stunning neon console experience.
+
+---
 
 ## Features
 
-- Add tasks with title and description
-- View all tasks with their status
-- Update task details by ID
-- Delete tasks by ID with confirmation
-- Mark tasks as complete/incomplete by ID
+* **Add tasks** with title and description.
+* **View all tasks** in a beautiful neon table with status indicators ([ ] / [X]).
+* **Update task details** by ID (press Enter to keep current value).
+* **Delete tasks** by ID with confirmation prompt.
+* **Toggle task completion** status.
+* **Immersive cyberpunk UI** with glowing cyan/magenta panels, icons (✦, 🚀), and rounded borders.
 
-## Setup
+---
 
-1. Ensure Python 3.13+ is installed on your system
-2. Install UV package manager: `pip install uv`
-3. Clone or create the project directory
-4. Navigate to the project root directory
+## Tech Stack
 
-## Running the Application
+* **Python 3.13+**: Latest stable Python for modern features.
+* **UV**: Ultra-fast Python project and dependency manager.
+* **Rich**: Terminal styling, layouts, and tables for the "cyberpunk" aesthetic.
 
-To run the Todo CLI application:
+---
+
+## Project Structure
+
+```text
+todo-console-app/
+├── .gitignore                        # Files to exclude from Git (like .venv)
+├── pyproject.toml                    # UV project configuration
+├── uv.lock                           # Locked dependency versions
+├── README.md                         # Project documentation
+├── src/
+│   ├── todo.py                       # Task dataclass + TodoManager logic
+│   ├── cli.py                        # Rich-powered cyberpunk UI components
+│   └── main.py                       # Application entry point & main loop
+└── specs_history/                    # Iterative design specifications
+    ├── spec_v1_initial.yaml
+    └── ...
+
+```
+
+---
+
+## 🛠️ Setup & Installation
+
+Follow these steps to get the environment ready:
+
+1. **Check Python Version** Ensure you have **Python 3.13+** installed on your system.
+2. **Install UV** If you don't have it yet, install the `uv` package manager:
+```bash
+pip install uv
+
+```
+
+
+3. **Clone & Navigate** Clone the repository and enter the project directory:
+```bash
+git clone <your-repo-url>
+cd todo-console-app
+
+```
+
+4. **Sync Environment** Create the virtual environment and install dependencies automatically:
+```bash
+uv sync
+
+```
+
+---
+
+## 🚀 Running the Application
+
+To launch the CLI, simply run:
 
 ```bash
 uv run src/main.py
-```
-
-The application will display a menu with the following options:
-- 1: Add Task
-- 2: View Tasks
-- 3: Update Task
-- 4: Delete Task
-- 5: Mark Complete
-- 0: Exit
-
-## Usage
-
-1. **Adding a Task**: Select option 1, then enter the task title and description when prompted.
-
-2. **Viewing Tasks**: Select option 2 to see all tasks with their ID, completion status, title, and description.
-
-3. **Updating a Task**: Select option 3, enter the task ID, then provide new title/description (press Enter to skip updating a field).
-
-4. **Deleting a Task**: Select option 4, enter the task ID, and confirm the deletion.
-
-5. **Marking Complete**: Select option 5 and enter the task ID to toggle its completion status.
-
-6. **Exiting**: Select option 0 to exit the application.
-
-## Example Session
 
 ```
-Welcome to the Todo App!
-------------------------
-1. Add Task
-2. View Tasks
-3. Update Task
-4. Delete Task
-5. Mark Complete
-0. Exit
-------------------------
-Select an option: 1
-Enter task title: Buy groceries
-Enter task description: Milk, bread, eggs
+
+### Main Menu Guide
+
+* `1` → **Create**: Add a new task with a title and description.
+* `2` → **Read**: Display your task list in the neon table.
+* `3` → **Update**: Modify an existing task's text.
+* `4` → **Delete**: Remove a task permanently.
+* `5` → **Complete**: Toggle the `[ ]` to an `[X]`.
+* `0` → **Exit**: Close the app with a friendly goodbye.
+
+---
+
+## Usage Examples
+
+### Adding a Task
+
+```text
+→ Enter your choice: 1
+Enter task title: Finish hackathon project
+Enter task description: Implement all Phase I features with style
 Task added successfully with ID 1.
 
-Select an option: 2
-[1] [ ] Buy groceries: Milk, bread, eggs
+```
 
-Select an option: 5
-Enter task ID to mark complete: 1
-Task 1 marked as complete.
+### Viewing the Dashboard
 
-Select an option: 2
-[1] [X] Buy groceries: Milk, bread, eggs
+```text
+Your Tasks
+┌────┬────────┬──────────────────────────┬────────────────────────────────────┐
+│ ID │ Status │ Title                    │ Description                        │
+├────┼────────┼──────────────────────────┼────────────────────────────────────┤
+│  1 │  [ ]   │ Finish hackathon project │ Implement all Phase I features ... │
+└────┴────────┴──────────────────────────┴────────────────────────────────────┘
 
-Select an option: 0
-Goodbye!
+```
+
+### Marking as Complete
+
+```text
+→ Enter your choice: 5
+Enter task ID: 1
+Task 1 marked as complete! ✦
+
+```
+
+---
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
 ```

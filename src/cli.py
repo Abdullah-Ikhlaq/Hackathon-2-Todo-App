@@ -252,7 +252,7 @@ def display_tasks(tasks: list[Task]):
     table.add_column("Description", style="dim white")
     
     for task in tasks:
-        status = "[X]" if task.completed else "[ ]"
+        status = "[✔]" if task.completed else "[ ]"
         status_color = SUCCESS_STYLE if task.completed else "dim"
         table.add_row(
             str(task.id),
